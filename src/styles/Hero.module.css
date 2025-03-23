@@ -1,72 +1,108 @@
+.heroWrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* Canvas scoped to hero only */
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Hero content positioned above canvas */
 .heroText {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    max-width: 90%;
-    padding: 0 1rem;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background: transparent;
+}
+
+.heroText h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #00ffff, #00bcd4, #00ffff);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animateText 5s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4), 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.heroText p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #ccc;
+}
+
+.subheading {
+  font-size: 1rem;
+  color: #888;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.ctaButton {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  color: black;
+  background: #00ffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: #009ea7;
+}
+
+/* Animate gradient text */
+@keyframes animateText {
+  0% {
+    background-position: 0% center;
   }
-  
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
   .heroText h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(90deg, #00ffff, #00bcd4, #00ffff);
-    background-size: 200% auto;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: animateText 5s ease-in-out infinite;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.4), 0 0 20px rgba(0, 255, 255, 0.2);
-  }
-  
-  .heroText p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #ccc;
-  }
-  
-  .ctaButton {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    color: black;
-    background: #00ffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .ctaButton:hover {
-    background: #009ea7;
-  }
-  
-  @keyframes animateText {
-    0% { background-position: 0% center; }
-    50% { background-position: 100% center; }
-    100% { background-position: 0% center; }
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .heroText h1 {
-      font-size: 2.2rem;
-    }
-  
-    .heroText p {
-      font-size: 1rem;
-    }
-  
-    .ctaButton {
-      width: 100%;
-      max-width: 280px;
-      font-size: 0.95rem;
-    }
+    font-size: 2.2rem;
   }
 
-  .subheading {
+  .heroText p {
     font-size: 1rem;
-    color: #888;
-    margin-top: -1rem;
-    margin-bottom: 2rem;
-    letter-spacing: 0.5px;
   }
-  
+
+  .ctaButton {
+    width: 100%;
+    max-width: 280px;
+    font-size: 0.95rem;
+  }
+}

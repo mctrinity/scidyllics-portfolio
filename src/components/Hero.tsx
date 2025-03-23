@@ -10,7 +10,12 @@ const Hero: React.FC = () => {
     const scene = new THREE.Scene();
     scene.fog = new THREE.Fog(0x000000, 5, 15);
 
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
     camera.position.z = 5;
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -88,8 +93,9 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <div ref={mountRef} className="three-canvas" />
+    <div className={styles.heroWrapper}>
+      <div ref={mountRef} className={styles.canvas} />
+
       <motion.div
         className={styles.heroText}
         initial={{ opacity: 0, y: 20 }}
@@ -97,7 +103,9 @@ const Hero: React.FC = () => {
         transition={{ duration: 1 }}
       >
         <h1>Welcome to Scidyllics</h1>
-        <p>Where code meets design, logic meets curiosity, and ideas come to life.</p>
+        <p>
+          Where code meets design, logic meets curiosity, and ideas come to life.
+        </p>
         <p className={styles.subheading}>AI • Web Development • Creative Coding</p>
         <button
           className={styles.ctaButton}
@@ -109,7 +117,7 @@ const Hero: React.FC = () => {
           View My Work
         </button>
       </motion.div>
-    </>
+    </div>
   );
 };
 
