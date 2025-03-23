@@ -3,6 +3,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import ContactForm from '@/components/Contact';
+import FeaturedProject from '@/components/FeaturedProject';
+
 
 const Home = () => {
   return (
@@ -17,6 +19,7 @@ const Home = () => {
 
         <main>
           <Hero />
+          <FeaturedProject />
 
           <section
             id="contact"

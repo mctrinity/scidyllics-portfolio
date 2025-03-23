@@ -1,0 +1,84 @@
+.footer {
+    background: rgba(0, 255, 255, 0.05);
+    color: #ccc;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(0, 255, 255, 0.1);
+    z-index: 5;
+  }
+  
+  .footerContent {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .footerLinks a {
+    margin: 0 10px;
+    color: #00ffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: opacity 0.3s;
+  }
+  
+  .footerLinks a:hover {
+    opacity: 0.7;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .footerLinks a {
+      display: block;
+      margin: 6px 0;
+    }
+  
+    .footer {
+      padding: 20px 10px;
+    }
+  }
+  
+  .contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 2rem auto;
+    max-width: 400px;
+  }
+  
+  .contactForm input,
+  .contactForm textarea {
+    padding: 0.75rem;
+    border-radius: 4px;
+    border: none;
+    font-size: 1rem;
+  }
+  
+  .contactForm textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .contactForm button {
+    background-color: #00ffff;
+    color: black;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .contactForm button:hover {
+    background-color: #00cccc;
+  }
+  
+  .success {
+    color: #00ffaa;
+    margin-top: 0.5rem;
+  }
+  
+  .error {
+    color: #ff5e5e;
+    margin-top: 0.5rem;
+  }
+  
