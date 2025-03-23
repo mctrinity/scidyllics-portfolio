@@ -1,40 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Scidyllics — Developer Portfolio 🚀
 
-## Getting Started
+Welcome to **Scidyllics**, a futuristic 3D-powered developer portfolio designed to showcase creative coding, AI, and full-stack development work. Built with **Next.js + TypeScript + Three.js + Framer Motion**, it blends interactive visuals with clean design.
 
-First, run the development server:
+---
+
+## 🔮 Features
+
+- 🎨 Hero section with animated **Torus Knot** using Three.js
+- 📦 Modular components with clean styling
+- ⚡ Scroll-triggered animations (Framer Motion)
+- 💌 Contact form with honeypot spam protection
+- 📩 Email handling via NodeMailer + Gmail SMTP
+- 💡 Featured Projects section
+- ✨ Fully responsive
+
+---
+
+## 📁 Folder Structure (Relevant Parts)
+
+```
+├── public/
+│   └── ...static assets
+├── src/
+│   ├── components/
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Contact.tsx
+│   │   └── FeaturedProject.tsx
+│   ├── pages/
+│   │   ├── api/
+│   │   │   └── contact.ts
+│   │   └── index.tsx
+│   └── styles/
+│       ├── globals.css
+│       ├── Hero.module.css
+│       ├── Contact.module.css
+│       └── FeaturedProject.module.css
+└── .env.local
+```
+
+---
+
+## 🔧 Setup & Development
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/scidyllics-portfolio.git
+cd scidyllics-portfolio
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Environment Variables
+
+Create a `.env.local` file:
+
+```env
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-gmail-app-password
+EMAIL_TO=your-email@gmail.com
+```
+
+> ✅ **Note:** Use a Gmail app password (not your actual Gmail password).
+
+### 4. Run the project
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit: [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 🌐 Live Demo
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+Deploy your portfolio on [Vercel](https://vercel.com/) or any platform that supports Next.js.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📫 Contact
 
-To learn more about Next.js, take a look at the following resources:
+If you'd like to connect or collaborate:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+- Email: `your@email.com`
+- [LinkedIn](https://www.linkedin.com/in/your-profile)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🧠 Inspiration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Inspired by futuristic interfaces and the intersection of AI, design, and engineering.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+---
+
+## 📜 License
+
+MIT — feel free to fork and customize.
+
+---
+
+_Designed & developed by Mary Ann Dizon a.k.a. [Scidyllics](https://github.com/mctrinity)_ ✨
