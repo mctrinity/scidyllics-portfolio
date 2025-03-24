@@ -1,9 +1,30 @@
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from '@/styles/FeaturedProject.module.css';
 
+type Project = {
+  Title: string;
+  Description: string;
+  LiveURL: string;
+  GitHubURL: string;
+  ImageURL: string;
+};
+
 const FeaturedProject = () => {
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    fetch(process.env.NEXT_PUBLIC_SHEET_BEST_URL as string)
+      .then((res) => res.json())
+      .then((data: Project[]) => {
+        setProjects(data);
+      })
+      .catch((err) => console.error('Failed to load project data', err));
+  }, []);
+
+  if (!projects.length) return null;
+
   return (
-    // <section className={styles.wrapper}>
     <section id="projects" className={styles.wrapper}>
       <motion.div
         className={styles.container}
@@ -12,28 +33,40 @@ const FeaturedProject = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <div className={styles.imageWrapper}>
-          <img
-            src="https://raw.githubusercontent.com/mctrinity/langchain-fibonacci/main/langchain-fibonacci.webp"
-            alt="LangChain Fibonacci"
-            className={styles.image}
-          />
-        </div>
+        {projects.map((project, index) => (
+          <div key={index} className={styles.projectCard}>
+            <div className={styles.imageWrapper}>
+              <img
+                src={project.ImageURL}
+                alt={project.Title}
+                className={styles.image}
+              />
+            </div>
 
-        <div className={styles.content}>
-          <h2 className={styles.title}>LangChain as a Coding Assistant: Fibonacci & Unit Testing</h2>
-          <p className={styles.description}>
-            A walkthrough of using LangChain as an AI coding assistant to implement and test the Fibonacci sequence — combining code generation and unit testing with LLM agents.
-          </p>
-          <div className={styles.buttons}>
-            <a href="https://app.readytensor.ai/publications/langchain-as-a-coding-assistant-fibonacci-unit-testing-T08j5PKJNXfQ" target="_blank" rel="noopener noreferrer" className={styles.button}>
-              Live Demo
-            </a>
-            <a href="https://github.com/mctrinity/langchain-fibonacci" target="_blank" rel="noopener noreferrer" className={styles.buttonAlt}>
-              Source Code
-            </a>
+            <div className={styles.content}>
+              <h2 className={styles.title}>{project.Title}</h2>
+              <p className={styles.description}>{project.Description}</p>
+              <div className={styles.buttons}>
+                <a
+                  href={project.LiveURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.button}
+                >
+                  Live Demo
+                </a>
+                <a
+                  href={project.GitHubURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.buttonAlt}
+                >
+                  Source Code
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
       </motion.div>
     </section>
   );
