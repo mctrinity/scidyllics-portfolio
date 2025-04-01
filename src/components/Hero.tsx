@@ -93,9 +93,9 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <div className={styles.heroWrapper}>
+    <section id="hero" className={styles.heroWrapper}>
       <div ref={mountRef} className={styles.canvas} />
-
+  
       <motion.div
         className={styles.heroText}
         initial={{ opacity: 0, y: 20 }}
@@ -117,8 +117,9 @@ const Hero: React.FC = () => {
           View My Work
         </button>
       </motion.div>
-    </div>
+    </section>
   );
+  
 };
 
 export default Hero;

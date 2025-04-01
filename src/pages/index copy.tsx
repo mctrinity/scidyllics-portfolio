@@ -2,9 +2,9 @@ import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
 import ContactForm from '@/components/Contact';
 import FeaturedProject from '@/components/FeaturedProject';
+
 
 const Home = () => {
   return (
@@ -19,12 +19,7 @@ const Home = () => {
 
         <main>
           <Hero />
-          
-          <section id="projects">
-            <FeaturedProject />
-          </section>
-
-          <About />
+          <FeaturedProject />
 
           <section
             id="contact"

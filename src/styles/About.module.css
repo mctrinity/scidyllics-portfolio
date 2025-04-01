@@ -1,0 +1,40 @@
+/* components/About.module.css */
+
+.wrapper {
+    padding: 4rem 1.5rem;
+    background: linear-gradient(to bottom, rgba(0, 255, 255, 0.05), transparent);
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container {
+    max-width: 800px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #00ffff, #00bcd4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .description {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.6;
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 1.6rem;
+    }
+  
+    .description {
+      font-size: 1rem;
+    }
+  }
+  

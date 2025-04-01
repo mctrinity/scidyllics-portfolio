@@ -12,6 +12,11 @@ html, body {
   color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 .page-wrapper {
   min-height: 100vh;
   display: flex;
