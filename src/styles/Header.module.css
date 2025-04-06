@@ -11,12 +11,22 @@
     z-index: 10;
   }
   
+
   .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: #00ffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
   }
   
+  .logo:hover {
+    color: #c9e4e4;; /* softer than white, still glowy/cyber */
+    cursor: pointer;
+  }
+  
+  
+    
   .nav {
     display: flex;
     gap: 20px;
